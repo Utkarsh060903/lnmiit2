@@ -15,6 +15,7 @@ import FacultyLogin from './Components/FacultyLogin/FacultyLogin';
 import FacultyRegister from './Components/FacultyRegister/FacultyRegister';
 import Guidelines from './Pages/Guidelines/guidelines';
 import Contactus from './Pages/ContactUs/contactus';
+import ForgotPassword from './Components/LoginModal/ForgotPassword.jsx';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/register/faculty' element={<FacultyRegister />} />
           <Route path='/login/faculty' element={<FacultyLogin />} />
           <Route path='/LoginModal' exact element={<LoginModal />} />
+          <Route path='/reset-password' element={<ForgotPassword />} />
         </Routes>
       </div>
     </UserProvider>

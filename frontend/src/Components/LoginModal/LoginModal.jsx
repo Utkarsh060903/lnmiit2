@@ -246,6 +246,11 @@ const LoginModal = () => {
               Don't have an account?{" "}
               <Link to="/register">Register here</Link> {/* Link to the register page */}
             </p>
+
+            <p>
+              forgot password?{" "}
+              <Link to="/reset-password">click here</Link> {/* Link to the register page */}
+            </p>
           </div>
         </div>
       </div>

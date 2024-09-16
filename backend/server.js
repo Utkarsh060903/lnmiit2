@@ -9,6 +9,7 @@ import getInfoRouter from './routes/getInfoRoute.js';
 import forgotPassRouter from './routes/forgotPasswordRoute.js';
 import facultyformRouter from './routes/facultyFomRouter.js';
 import roomAvailabilityRouter from './routes/roomAvailabilityRoute.js';
+import emailRouter from './routes/emailForward.js';
 const app = express()
 
 dotenv.config();
@@ -25,6 +26,7 @@ app.use('/api' , getInfoRouter)
 app.use('/api' , forgotPassRouter)
 app.use('/uploads', express.static('uploads'));
 app.use('/api' , roomAvailabilityRouter)
+app.use("/api" , emailRouter)
 
 connectDB();
 

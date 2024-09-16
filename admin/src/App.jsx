@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/studentinfo' element={<InfoPage />} />
           <Route path='/roomset' element={<RoomSet />} />
+
         </Routes>
       </div>
     </>
