@@ -1,0 +1,67 @@
+/* Container styling */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    margin-top: 200px;
+  }
+  
+  /* Heading styling */
+  .register-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  /* Form styling */
+  .register-form {
+    text-align: left;
+  }
+  
+  .register-form .ant-form-item {
+    margin-bottom: 16px;
+  }
+  
+  .register-form .ant-input {
+    border-radius: 4px;
+  }
+  
+  .register-form .ant-input-affix-wrapper {
+    border-radius: 4px;
+  }
+  
+  .register-button {
+    width: 100%;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    color: #fff;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .register-button:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+  }
+  
+  .login-link {
+    margin-top: 16px;
+    color: #fff;
+  }
+  
+  .login-link a {
+    color: #1890ff;
+  }
+  
+  .login-link a:hover {
+    color: #40a9ff;
+  }
+  

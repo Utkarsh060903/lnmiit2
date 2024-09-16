@@ -1,0 +1,129 @@
+#guidelines {
+    /* width: 100%; */
+    /* position: relative; */
+    /* background-size: cover; */
+    /* position: relative; */
+    background-color: #0f0f0f;
+    padding: 50px 0 80px 0;
+    padding-top: 30px;
+    overflow: hidden;
+    display: block;
+    unicode-bidi: isolate;
+    width: auto;
+    margin: 0 0 0 0;
+    height: auto;
+}
+
+.ct10{
+    /* margin-top: -50px; */
+    /* width: 100%;
+    margin: 0 50px;
+    height: auto; */
+    background-color: #444444;
+    padding: 10px 12px;
+    margin: 0 50px;
+   
+    border-radius: 6px;
+}
+
+section {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 5px;
+    margin-top: 40px;
+ 
+}
+
+.section-title > h2{
+    display: block;
+    font-size: 32px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+#guidelines .content ul i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 20px;
+    color: #0E7094;
+    line-height: 1;
+}
+
+i {
+    font-style: italic;
+}
+
+#guidelines .gh-card ul li {
+    text-align: left ;
+}
+
+li {
+    text-align: -webkit-match-parent;
+}
+
+#guidelines .content ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+#guidelines .gh-card {
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    background: #444444;
+    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+
+
+
+

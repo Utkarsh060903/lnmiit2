@@ -1,0 +1,153 @@
+*{
+    /* font-family: 'Sora' , sans-serif; */
+    box-sizing: border-box;
+    /* dfkhsdhfjs */
+    /* margin: 0; */
+    padding: 0;
+  }
+  
+  
+  .imge {
+    position: absolute;
+    height: 80px;
+    width: 145px;
+    left: 0;
+    z-index: 25;
+    /* top: 50%; Center vertically in the navbar */
+    /* transform: translateY(-50%); Adjust for vertical centering */
+
+    @media screen and (max-width: 1024px) {
+        height: 60px; /* Adjust size for laptops */
+        width: 120px;
+    }
+
+    @media screen and (max-width: 768px) {
+        height: 50px; /* Further adjust size for tablets */
+        width: 100px;
+    }
+
+    @media screen and (max-width: 480px) {
+        height: 40px; /* Adjust size for smaller screens */
+        width: 80px;
+    }
+}
+
+/* Navbar */
+/* .Nav {
+    padding-left: 150px; 
+    
+    @media screen and (max-width: 1024px) {
+        padding-left: 120px; 
+    }
+
+    @media screen and (max-width: 768px) {
+        padding-left: 10px; 
+    }
+
+    @media screen and (max-width: 480px) {
+        padding-left: 5px; 
+    }
+} */
+  
+  /* .imge{
+    margin-left: -200px;
+    height: 80px;
+    width: 145px;
+    /* font-size: 10000px; */
+  /* } */ 
+  
+  .lnm{
+    /* background-size:center;
+    background-position: center; */
+    /* height: 600px; */
+    width: 1498px;
+    height: 900px;
+  }
+  
+  .heading1{
+    
+      /* Font & Text */
+      font-family: Poppins, sans-serif;
+      font-size: 56px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 700;
+      letter-spacing: normal;
+      line-height: 72px;
+      text-decoration: none solid rgb(14, 112, 148);
+      text-align:center;
+    
+    
+      /* Color & Background */
+      background-attachment: scroll;
+  
+      background-image: none;
+      background-position: 0% 0%;
+      background-repeat: repeat;
+      color: rgb(14, 112, 148);
+    
+      /* Box */
+      height: 143.977px;
+      width: 1116.02px;
+      margin:100px auto auto auto;
+      padding: 0px;
+  }
+  
+  .h2-heading{
+     color: #000;
+  }
+  
+  .App {
+    text-align: center;
+    /* display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #f0f2f5;
+    font-family: Arial, sans-serif; */
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+ html{
+  scroll-behavior: smooth;
+ }
+
+  
+
+  
+  

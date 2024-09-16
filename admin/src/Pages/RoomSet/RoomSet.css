@@ -1,0 +1,153 @@
+/* .main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 180px;
+
+}
+
+.card{
+    height: 300px;
+    width: 300px;
+    margin-left: 10px;
+    border-radius: 15px;
+    border: 1px solid tomato;
+}
+
+.room-text{
+    padding: 30px;
+    padding-left: 100px;
+}
+
+.availability{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.non-availability{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+} */
+
+/* .roomset {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 180px;
+    position: relative; /* Needed for the absolute positioning of the date-picker */
+  /* }
+  
+  .date-picker {
+    position: absolute;
+    top: -40px; /* Adjust as needed to position the date picker */
+    right: 0;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  /* }
+  
+  .card {
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    border: 1px solid tomato;
+    margin-top: 50px;
+  }
+  
+  .room-text {
+    padding: 30px;
+    padding-left: 100px;
+  }
+  
+  .availability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  
+  .non-availability {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+    */
+
+
+   .roomset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .date-picker {
+    margin-bottom: 20px;
+  }
+  
+  .main {
+    padding-left: 100px;
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .room-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .availability, .non-availability {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+
+  .save-button {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  

@@ -1,0 +1,137 @@
+/* * {
+    margin: 0;
+    padding: 0;
+  } */
+  
+  .nav_ul li {
+    padding: 0 0.6rem;
+  }
+
+  .footer .ct1{
+   max-width: 100%;
+   position: relative;
+   margin-left: auto;
+   margin-right: 0px;
+   background-color: #0C0C0C;
+   /* margin-right: 120px; */
+  }
+  
+  /* .row{
+    margin-left: 100px;
+    /* position: relative; */
+  
+  
+  .footer {
+    padding: 0 0;
+    margin-top: 0;
+    background-color: #0C0C0C;
+    /* position: relative; */
+  }
+  
+  
+  .ft-1 h3 {
+    font-weight: 700;
+    font-family: cursive;
+    letter-spacing: 2px;
+    padding: 0.5rem 0;
+    color: aliceblue;
+  }
+  
+  .ft-1 span {
+    color: #256ce1;
+  }
+  
+  .ft-1 p {
+    padding: 0rem 5rem 0.2rem 0;
+    font-weight: 500;
+    margin-bottom: 0;
+    color:aliceblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .footer-icons i {
+    padding: 0.4rem 0.5rem;
+    background: #e1e1e1;
+    color: #f60838;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+  }
+  
+  .footer-icons i:hover {
+    background: #f60838;
+    color: #fff;
+    transition: 0.6s;
+    cursor: pointer;
+  }
+  
+  .footer h5 {
+    color: #256ce1;
+    margin-top: 0.9rem;
+    font-size: 22px;
+  }
+  
+  .ft-2 ul {
+    list-style:none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .ft-2 ul li {
+    padding: 0.35rem 0;
+    font-weight: 500;
+  }
+  
+  .ft-2 ul a {
+    text-decoration: none;
+    color:aliceblue;
+    font-size: 1.06rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 540;
+
+  }
+
+  .ft-3 ul {
+    list-style:none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .ft-3 ul li {
+    padding: 0.35rem 0;
+    font-weight: 500;
+  }
+  .ft-3 ul a {
+    text-decoration:none;
+    color:aliceblue;
+    font-size: 1.06rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 540;
+
+
+  }
+
+  .ft-3 p {
+    font-weight: 500;
+    padding: 0.1rem 0;
+    font-size: 1.06rem;
+  }
+  
+  .ft-3 i {
+    padding-right: 0.5rem;
+  }
+  
+  .Last-footer {
+    background: #256ce1;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .Last-footer p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 575;
+    color: aliceblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  
+  }
