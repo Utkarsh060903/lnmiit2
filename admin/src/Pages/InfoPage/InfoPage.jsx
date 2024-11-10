@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./InfoPage.css";
 import axios from "axios";
 import moment from "moment";
@@ -7,20 +7,21 @@ const InfoPage = () => {
   const [info, setInfo] = useState([]);
   const url = "http://localhost:4001";
 
-  const handleForward = async (studentRollNumber) => {
+  const handleForward = async (student) => {
     try {
       const response = await axios.post(`${url}/api/send-email-approval`, {
-        studentRollNumber,
+        studentName: student.studentName, // Pass studentName along with rollNumber
+        studentRollNumber: student.studentRollNumber,
       });
 
       if (response.data.success) {
-        alert("email forwarded to the dean");
+        alert("Email forwarded to the dean");
       } else {
-        alert("failed to send email");
+        alert("Failed to send email: " + response.data.message);
       }
     } catch (err) {
-      console.log(err);
-      alert("failed to send email")
+      console.error("Error sending email:", err);
+      alert("Failed to send email. Please try again later.");
     }
   };
 
@@ -30,10 +31,10 @@ const InfoPage = () => {
       if (response.data.success) {
         setInfo(response.data.data);
       } else {
-        console.error("Error fetching data");
+        console.error("Error fetching data:", response.data.message);
       }
     } catch (error) {
-      console.error("Error fetching data", error);
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -42,34 +43,52 @@ const InfoPage = () => {
   }, []);
 
   return (
-    <div className="list add flex-col">
-      <p>Students Applied For Guest House</p>
-      <div className="list-table">
-        <div className="list-table-format title">
-          <b>photo</b>
-          <b>name</b>
-          <b>rollno</b>
-          <b>department</b>
-          <b>phoneno</b>
-          <b>guests</b>
-          <b>arrivalDate</b>
-          <b>departureDate</b>
-          <b>arrivalTime</b>
-        </div>
-        {info.map((item, index) => (
-          <div key={index} className="list-table-format">
-            <img src={`${url}/uploads/` + item.photo} />
-            <p>{item.studentName}</p>
-            <p>{item.studentRollNumber}</p>
-            <p>{item.studentDepartment}</p>
-            <p>{item.studentMobileNumber}</p>
-            <p>{item.numberOfRooms}</p>
-            <p>{moment(item.arrivalDate).format("YYYY-MM-DD")}</p>
-            <p>{moment(item.departureDate).format("YYYY-MM-DD")}</p>
-            <p>{item.arrivalTime}</p>
-            <button onClick={() => handleForward((item.studentRollNumber))}>forward for approval</button>
+    <div className="guest-house-container">
+      <div className="list add">
+        <h1 className="page-title">Students Applied For Guest House</h1>
+        <div className="list-table">
+          <div className="list-table-format title">
+            <b>Photo</b>
+            <b>Name</b>
+            <b>Roll No</b>
+            <b>Department</b>
+            <b>Phone No</b>
+            <b>Rooms</b>
+            <b>Arrival Date</b>
+            <b>Departure Date</b>
+            <b>Actions</b> {/* Added Actions column */}
           </div>
-        ))}
+          {info.map((item, index) => (
+            <div key={index} className="list-table-format">
+              <div className="photo-cell">
+                <img 
+                  src={`${url}/uploads/${item.photo}`} 
+                  alt={`${item.studentName}'s photo`}
+                  className="student-photo"
+                />
+              </div>
+              <div className="text-cell">{item.studentName}</div>
+              <div className="text-cell">{item.studentRollNumber}</div>
+              <div className="text-cell">{item.studentDepartment}</div>
+              <div className="text-cell">{item.studentMobileNumber}</div>
+              <div className="text-cell center">{item.numberOfRooms}</div>
+              <div className="text-cell center">
+                {moment(item.arrivalDate).format("YYYY-MM-DD")}
+              </div>
+              <div className="text-cell center">
+                {moment(item.departureDate).format("YYYY-MM-DD")}
+              </div>
+              <div className="text-cell center">
+                <button 
+                  className="forward-button"
+                  onClick={() => handleForward(item)}
+                >
+                  Forward for Approval
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

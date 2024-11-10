@@ -55,7 +55,7 @@ const Home = () => {
           transform: "translate(-50%, -50%)" // Center text both horizontally and vertically
         }}
       >
-        <h1 className="heading1">Welcome to LNMIIT Jaipur Guest House Booking System</h1>
+        <h1 className="heading1">Welcome to LNMIIT Jaipur Guest House Booking Website</h1>
         <h2 className="h2-heading">We are not away from home</h2>
         <div className="start-cards">
           <div className="cardss">

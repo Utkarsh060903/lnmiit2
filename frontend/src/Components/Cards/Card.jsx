@@ -1,7 +1,7 @@
-import React from 'react'
 import "./Card.css"
+import PropTypes from 'prop-types';
 
-const Card = ({title,imageurl,info}) => {
+const Card = ({title, info}) => {
   return (
     <div className='card-container'>
         {/* <div className='image-container'>
@@ -16,13 +16,18 @@ const Card = ({title,imageurl,info}) => {
         </div>
         </div>
         
-        <div className='btn'>
+        {/* <div className='btn'>
           <button>
             <a>view more</a>
           </button>
-        </div>
+        </div> */}
     </div>
   )
 }
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+};
 
 export default Card

@@ -16,6 +16,9 @@ import FacultyRegister from './Components/FacultyRegister/FacultyRegister';
 import Guidelines from './Pages/Guidelines/guidelines';
 import Contactus from './Pages/ContactUs/contactus';
 import ForgotPassword from './Components/LoginModal/ForgotPassword.jsx';
+import GuestHouseFacultyBookingForm from './Pages/FacultyForm/FacultyForm';
+import Services from './Pages/services/Services.jsx';
+import Gallery from './Pages/gallery/Gallery.jsx';
 
 const App = () => {
   return (
@@ -31,12 +34,15 @@ const App = () => {
           <Route path='/guidelines' element={<Guidelines />} />
           <Route path='/contactus' element={<Contactus />} />
           <Route path='/form' exact element={<GuestHouseBookingForm />} />
+          <Route path='/facultyForm' exact element={<GuestHouseFacultyBookingForm />}/>
           <Route path='/login/student' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/register/faculty' element={<FacultyRegister />} />
           <Route path='/login/faculty' element={<FacultyLogin />} />
           <Route path='/LoginModal' exact element={<LoginModal />} />
           <Route path='/reset-password' element={<ForgotPassword />} />
+          <Route path='/services' element={<Services />}/>
+          <Route path='/gallery' element={<Gallery />}/>
         </Routes>
       </div>
     </UserProvider>

@@ -1,7 +1,7 @@
 #contact {
     position: relative;
     max-width: 100%;
-    background-color: dodgerblue;
+    background-color: #8c1515;
     padding: 50px 0 80px 0;
     padding-top: 30px;
     overflow: hidden;
@@ -14,7 +14,7 @@
 
 
 .contact-body{
-    background-color: #000;
+    background-color: #fafafa;
     padding: 50px 32px;
     margin: 0 50px;
     border-radius: 6px;
@@ -39,11 +39,13 @@
     text-align:left;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
+    color: black;
 }
 
 .contact p{
     text-align: left;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
 }
 
 section {

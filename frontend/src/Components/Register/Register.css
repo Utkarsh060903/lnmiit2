@@ -1,4 +1,4 @@
-
+/* 
 .outer-div {
   position: relative;
   background-image: url('../../images/download33.png');
@@ -7,14 +7,14 @@
 }
 
 .inner-div {
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   padding-top: 5px;
   margin-top: -40px;
   width: 498.4px;
   height: 550px;
   border-radius: 10px;
-  backdrop-filter: blur(10px); /* Apply blur effect */
+  backdrop-filter: blur(10px); 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,6 +29,51 @@
   text-align: center;
   color: black;
 }
+
+.buttn{
+  margin-right: 230.1px;
+}
+
+.form-label{
+  color: black;
+} */
+
+.outer-div {
+  position: relative;
+  background-image: url('../../images/download33.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.inner-div {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* padding: auto; */
+  margin: auto;
+  margin-top: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  width: 498.4px;
+  height: auto;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-heading {
+  text-align: center;
+  /* margin-bottom: 20px; */
+  color: black;
+  margin-top: 0px;
+}
+
+.col{
+  padding-bottom: 0px;
+}
+
+
 
 .buttn{
   margin-right: 230.1px;

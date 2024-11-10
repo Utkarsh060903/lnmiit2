@@ -1,97 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.guest-house-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.list.add {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.list.add p {
-    font-size: 20px; /* Reduced from 24px */
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
 
 .list-table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  display: grid;
+  gap: 10px;
 }
 
 .list-table-format {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr); /* Adjusted to 9 columns */
-    align-items: center;
-    gap: 10px; /* Reduced gap */
-    padding: 8px 10px; /* Reduced padding */
-    border-bottom: 1px solid #cacaca;
-    font-size: 12px; /* Reduced from 14px */
-    background-color: #fff;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr 1fr 1.2fr 1.2fr 0.8fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.list-table-format:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .list-table-format.title {
-    background-color: #f1f1f1;
-    font-weight: bold;
-    border-top: 2px solid #cacaca;
+  background-color: #e9ecef;
+  font-weight: bold;
+  border-top: 2px solid #cacaca;
+  border-bottom: 2px solid #cacaca;
 }
 
 .list-table-format.title b {
-    font-size: 14px; /* Reduced from 16px */
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #333;
 }
 
-.list-table-format p {
-    margin: 0;
-    font-size: 12px; /* Corrected font size */
+.photo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.list-table-format img {
-    width: 40px; /* Reduced from 50px */
-    height: 40px; /* Reduced from 50px */
-    object-fit: cover;
-    border-radius: 5px;
+.student-photo {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.text-cell {
+  font-size: 14px;
+  color: #444;
+}
+
+.text-cell.center {
+  text-align: center;
+}
+
+.forward-button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.forward-button:hover {
+  background-color: #45a049;
 }
 
 @media (max-width: 1024px) {
-    .list-table-format {
-        grid-template-columns: repeat(5, 1fr);
-    }
+  .list-table-format {
+      grid-template-columns: 0.8fr 1.2fr 1fr 1.2fr 1.2fr;
+      gap: 15px;
+  }
+
+  .forward-button {
+      grid-column: span 5;
+  }
 }
 
 @media (max-width: 768px) {
-    .list-table-format {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .list-table-format {
+      grid-template-columns: 0.8fr 1.2fr 1fr;
+      gap: 10px;
+  }
 
-    .list-table-format.title {
-        display: none;
-    }
+  .list-table-format.title {
+      display: none;
+  }
 
-    .list-table-format p:nth-child(n+4) {
-        display: none;
-    }
+  .text-cell:nth-child(n+4) {
+      display: none;
+  }
+
+  .forward-button {
+      grid-column: span 3;
+  }
 }
 
 @media (max-width: 480px) {
-    .list-table-format {
-        grid-template-columns: 1fr;
-        gap: 5px;
-        font-size: 10px; /* Reduced from 12px */
-    }
+  .list-table-format {
+      grid-template-columns: 1fr;
+      gap: 5px;
+  }
 
-    .list-table-format p {
-        display: block;
-        padding: 5px 0;
-    }
+  .page-title{
+      margin-top: 50px;
+  }
 
-    .list-table-format img {
-        width: 30px; /* Further reduced */
-        height: 30px; /* Further reduced */
-    }
+  .student-photo {
+      width: 30px;
+      height: 30px;
+  }
+
+  .forward-button {
+      grid-column: 1;
+      width: 100%;
+  }
 }

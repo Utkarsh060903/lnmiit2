@@ -1,8 +1,8 @@
 import express from 'express';
-import { form } from '../controllers/formController.js';
+import { getfacultyInfo} from '../controllers/getFacultInfoController.js';
 import multer from 'multer';
 
-const formRouter = express.Router();
+const getFacultyInfoRouter = express.Router();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,6 +15,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-formRouter.post('/form', upload.single('photo'), form);
+getFacultyInfoRouter.get('/faculty-info',upload.single('photo') ,getfacultyInfo);
 
-export default formRouter;
+export default getFacultyInfoRouter;

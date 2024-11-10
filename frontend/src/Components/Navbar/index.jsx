@@ -2,8 +2,6 @@ import { useContext } from "react";
 import "../../App.css";
 import image22 from "../../images/logo2_145x80.png";
 import "./extra.css";
-
-// import { NavLink } from 'react-router-dom';
 import {
   Nav,
   Bars,
@@ -22,7 +20,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     setUser(null);
-    navigate("/");
+    navigate("/LoginModal");
   };
   return (
     <>
@@ -73,30 +71,58 @@ const Navbar = () => {
                   });
                 }
               }}
-
-              // onClick={(e) => {
-              //   e.preventDefault(); // Prevent the default behavior of the link
-              //   document.getElementById("outer").scrollIntoView({ behavior: "smooth" }) // Scroll to the section
-              // }}
             >
               About Us
             </NavLink>
+
             <NavLink
               to="/services"
               style={({ isActive }) => ({
                 color: isActive ? "red" : "inherit",
               })}
+              onClick={(e) => {
+                e.preventDefault();
+                const navbarHeight =
+                  document.querySelector(Nav)?.offsetHeight || 0; //finds navbar fixed height
+                const element = document.getElementById("services");
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition =
+                    elementPosition + window.scrollY - navbarHeight;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
             >
               Services
             </NavLink>
+
             <NavLink
-              to="/charges"
+              to="/gallery"
               style={({ isActive }) => ({
                 color: isActive ? "red" : "inherit",
               })}
+              onClick={(e) => {
+                e.preventDefault();
+                const navbarHeight =
+                  document.querySelector(Nav)?.offsetHeight || 0; //finds navbar fixed height
+                const element = document.getElementById("gallery");
+                if (element) {
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition =
+                    elementPosition + window.scrollY - navbarHeight;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
             >
-              Charges
+              Gallery
             </NavLink>
+
             <NavLink
               to="/availability"
               style={({ isActive }) => ({
@@ -117,11 +143,6 @@ const Navbar = () => {
                   });
                 }
               }}
-
-              // onClick={(e) => {
-              //   e.preventDefault(); // Prevent the default behavior of the link
-              //   document.getElementById("availability").scrollIntoView({ behavior: "smooth" }); // Scroll to the section
-              // }}
             >
               Availability
             </NavLink>
@@ -146,11 +167,6 @@ const Navbar = () => {
                   });
                 }
               }}
-
-              // onClick={(e) => {
-              //   e.preventDefault(); // Prevent the default behavior of the link
-              //   document.getElementById("guidelines").scrollIntoView({ behavior: "smooth" , block: "start" , inline: "start" }); // Scroll to the section
-              // }}
             >
               Guidelines
             </NavLink>
@@ -174,10 +190,6 @@ const Navbar = () => {
                   });
                 }
               }}
-              // onClick={(e) => {
-              //   e.preventDefault(); // Prevent the default behavior of the link
-              //   document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); // Scroll to the section
-              // }}
             >
               Contact Us
             </NavLink>
@@ -189,7 +201,9 @@ const Navbar = () => {
               BOOK NOW
             </NavBtnLink>
           )}
-          {user && <NavBtnLink onClick={handleLogout}>{user.username}</NavBtnLink>}
+          {user && (
+            <NavBtnLink onClick={handleLogout}>{user.username}</NavBtnLink>
+          )}
 
           {!user && (
             <NavBtnLink className="btn2" to="/LoginModal">
@@ -204,59 +218,112 @@ const Navbar = () => {
 
 export default Navbar;
 
-// // // import React from 'react'
-// // import "../../App.css"
-// // import image22 from "../../images/logo2_145x80.png"
+// import { useContext, useState } from "react";
+// import "../../App.css";
+// import image22 from "../../images/logo2_145x80.png";
+// import "./extra.css";
+// import {
+//   Nav,
+//   Bars,
+//   NavLink,
+//   NavBtn,
+//   NavBtnLink,
+//   NavMenu,
+// } from "./NavbarElements";
+// import { UserContext } from "../../context/UserContext";
+// import { useNavigate } from "react-router-dom";
 
-// // // import { NavLink } from 'react-router-dom';
-// // import { Nav, Bars, NavLink,  NavBtn, NavBtnLink, NavMenu } from './NavbarElements';
+// const Navbar = () => {
+//   const { user, setUser } = useContext(UserContext);
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const navigate = useNavigate();
 
-// // const Navbar = () => {
-// //   return(
-// //     <>
-// //       <Nav>
-// //         <NavLink to='/'>
-// //           <img src={image22} alt="logo" className="imge" />
-// //         </NavLink>
-// //         <Bars/>
-// //         <NavMenu>
-// //           <NavLink to="/about" activeStyle>
-// //             About Us
-// //           </NavLink>
-// //           <NavLink to="/services" activeStyle>
-// //             Services
-// //           </NavLink>
-// //           <NavLink to="/charges" activeStyle>
-// //             Charges
-// //           </NavLink>
-// //           <NavLink to="/availability" activeStyle>
-// //             Availability
-// //           </NavLink>
-// //           <NavLink to="/guidelines" activeStyle>
-// //             Guidelines
-// //           </NavLink>
-// //           {/* <NavLink to="/gallery" activeStyle>
-// //             Gallery
-// //           </NavLink> */}
-// //           <NavLink to="/contactus" activeStyle>
-// //             Contact Us
-// //           </NavLink>
-// //           {/* <NavLink  to="/sign-up" activeStyle>
-// //             Sign Up
-// //           </NavLink> */}
-// //         </NavMenu>
-// //         <NavBtn>
-// //           <NavBtnLink className={"btn1"} to="/LoginModal">
-// //             SIGN IN
-// //           </NavBtnLink>
-// //           <NavBtnLink className={"btn2"} to="/form">
-// //             BOOK NOW
-// //           </NavBtnLink>
-// //         </NavBtn>
-// //       </Nav>
-// //     </>
-// //   );
+//   const handleLogout = () => {
+//     setUser(null);
+//     navigate("/LoginModal");
+//   };
 
-// // };
+//   const toggleMenu = () => {
+//     setMenuOpen(!menuOpen);
+//   };
 
-// // export default  Navbar;
+//   return (
+//     <>
+//       <Nav>
+//         <NavLink to="/">
+//           <img
+//             src={image22}
+//             alt="logo"
+//             className="imge"
+//             onClick={(e) => {
+//               e.preventDefault();
+//               const navbarHeight =
+//                 document.querySelector(Nav)?.offsetHeight || 0;
+//               const element = document.getElementById("home");
+//               if (element) {
+//                 const elementPosition = element.getBoundingClientRect().top;
+//                 const offsetPosition =
+//                   elementPosition + window.scrollY - navbarHeight;
+//                 window.scrollTo({
+//                   top: offsetPosition,
+//                   behavior: "smooth",
+//                 });
+//               }
+//             }}
+//           />
+//         </NavLink>
+
+//         <div className="hamburger" onClick={toggleMenu}>
+//           <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+//           <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+//           <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+//         </div>
+
+//         <div className={`main-div ${menuOpen ? "open" : ""}`}>
+//           <NavMenu>
+//             <NavLink
+//               to="/about"
+//               className="abt-btn"
+//               onClick={() => setMenuOpen(false)}
+//             >
+//               About Us
+//             </NavLink>
+//             <NavLink to="/services" onClick={() => setMenuOpen(false)}>
+//               Services
+//             </NavLink>
+//             <NavLink to="/gallery" onClick={() => setMenuOpen(false)}>
+//               Gallery
+//             </NavLink>
+//             <NavLink to="/availability" onClick={() => setMenuOpen(false)}>
+//               Availability
+//             </NavLink>
+//             <NavLink to="/guidelines" onClick={() => setMenuOpen(false)}>
+//               Guidelines
+//             </NavLink>
+//             <NavLink to="/contactus" onClick={() => setMenuOpen(false)}>
+//               Contact Us
+//             </NavLink>
+//           </NavMenu>
+//         </div>
+
+//         <NavBtn className="btn-div">
+//           {user && (
+//             <NavBtnLink className="btn1" to="/form">
+//               BOOK NOW
+//             </NavBtnLink>
+//           )}
+//           {user && (
+//             <NavBtnLink onClick={handleLogout}>{user.username}</NavBtnLink>
+//           )}
+//           {!user && (
+//             <NavBtnLink className="btn2" to="/LoginModal">
+//               SIGN IN
+//             </NavBtnLink>
+//           )}
+//         </NavBtn>
+//       </Nav>
+//     </>
+//   );
+// };
+
+// export default Navbar;

@@ -3,7 +3,7 @@ import mongoose, { mongo } from "mongoose";
 const formSchema = new mongoose.Schema({
     studentName: {
         type: String,
-        //required: true
+        required: true
     },
 
     studentRollNumber: {

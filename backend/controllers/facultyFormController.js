@@ -1,30 +1,90 @@
+// import facultyFormModel from '../models/facultyform.js';
+
+// const facultyForm = async (req, res) => {
+//     const {facultyName, facultyEmployeeId, facultyDepartment, facultyMobileNumber, guests, arrivalDate, departureDate, arrivalTime } = req.body;
+
+//     try {
+//         if (!req.file) {
+//             return res.status(400).json({ success: false, message: 'Photo is required' });
+//         }
+//         const newRequest = new facultyFormModel({
+//             facultyName: facultyName,
+//             facultyEmployeeId: facultyEmployeeId,
+//             facultyDepartment: facultyDepartment,
+//             facultyMobileNumber: facultyMobileNumber,
+//             photo: req.file.filename,
+//             guests: guests,
+//             arrivalDate: arrivalDate,
+//             departureDate: departureDate,
+//             arrivalTime: arrivalTime
+//         });
+//         const request = await newRequest.save();
+//         res.json({ success: true, message: 'Successfully form submitted' });
+
+//     } catch (error) {
+//         console.log(error);
+//         res.json({ success: false, message: 'Error' });
+//     }
+// };
+
+// export { facultyForm};
+
 import facultyFormModel from '../models/facultyform.js';
 
 const facultyForm = async (req, res) => {
-    const { name, employeeId, department, phoneno, guests, arrivalDate, departureDate, arrivalTime } = req.body;
+    const {
+        facultyName,
+        facultyEmployeeId,
+        facultyDepartment,
+        facultyMobileNumber,
+        guests,
+        arrivalDate,
+        departureDate,
+        arrivalTime,
+        guestPurpose,
+        guestRelation,
+        numberOfRooms,
+        guestName,
+        guestMobileNumber,
+        numberOfMales,
+        numberOfFemales,
+        numberOfChildren,
+        gender
+    } = req.body;
 
     try {
         if (!req.file) {
             return res.status(400).json({ success: false, message: 'Photo is required' });
         }
+        
         const newRequest = new facultyFormModel({
-            name: name,
-            employeeId: employeeId,
-            department: department,
-            phoneno: phoneno,
+            facultyName,
+            facultyEmployeeId,
+            facultyDepartment,
+            facultyMobileNumber,
             photo: req.file.filename,
-            guests: guests,
-            arrivalDate: arrivalDate,
-            departureDate: departureDate,
-            arrivalTime: arrivalTime
+            guests,
+            arrivalDate,
+            departureDate,
+            arrivalTime,
+            guestPurpose,
+            guestRelation,
+            numberOfRooms,
+            guestName,
+            guestMobileNumber,
+            numberOfMales,
+            numberOfFemales,
+            numberOfChildren,
+            gender
         });
+
         const request = await newRequest.save();
         res.json({ success: true, message: 'Successfully form submitted' });
 
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: 'Error' });
+        res.status(500).json({ success: false, message: 'Error submitting form' });
     }
 };
 
-export { facultyForm};
+export { facultyForm };

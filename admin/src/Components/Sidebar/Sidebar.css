@@ -1,20 +1,23 @@
-.sidebar{
+/* Base styles for Sidebar */
+.sidebar {
     width: 18%;
     min-height: 100vh;
     border: 1.5px solid #a9a9a9;
     border-top: 0;
-    font-size: max(1vw,10px);
-}
-
-.sidebar-options{
+    font-size: max(1vw, 10px);
+    transition: width 0.3s ease;
+    background-color: #f9f9f9;
+  }
+  
+  .sidebar-options {
     padding-top: 50px;
     padding-left: 20%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.sidebar-option{
+  }
+  
+  .sidebar-option {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -23,15 +26,82 @@
     padding: 8px 10px;
     border-radius: 3px 0px 0px 3px;
     cursor: pointer;
-}
-
-.sidebar-option.active{
+    font-size: 1em;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-option:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .sidebar-option.active {
     background-color: #fff0ed;
     border-color: tomato;
-}
-
-@media (max-width: 900px){
-    .sidebar-option p{
-        display: none;
+    font-weight: bold;
+  }
+  
+  /* Hamburger icon */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 900px) {
+    /* Hamburger display on mobile */
+    .hamburger {
+      display: flex;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
     }
-}
+  
+    /* Sidebar responsive styles */
+    .sidebar {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      width: 70%;
+      max-width: 250px;
+      height: 100%;
+      background-color: #f9f9f9;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      transition: left 0.3s ease;
+      z-index: 90;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  
+    /* Sidebar options styling */
+    .sidebar-options {
+      padding-top: 60px;
+      padding-left: 15%;
+    }
+  
+    .sidebar-option {
+      justify-content: flex-start;
+      padding: 15px 20px;
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .sidebar {
+      width: 80%;
+    }
+  }
+  

@@ -21,7 +21,7 @@
     width: auto;
     margin: 0 0 0 0;
     height: auto;
-    background-color: #0F0F0F;
+    background-color: #FAFAFA;
     
 }
 
@@ -29,7 +29,6 @@
     text-align: center;
     padding-bottom: 5px;
     margin-top: 40px;
-
 }
 
  /* h2{
@@ -99,6 +98,10 @@ ul {
     border-radius: 8px;
     
     /* position: absolute; */
+}
+
+#outer h2{
+    color: black;
 }
 
 /* ul .ite{

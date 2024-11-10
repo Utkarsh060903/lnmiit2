@@ -2,7 +2,7 @@ import formModel from "../models/formModel.js";
 
 const form = async (req, res) => {
   const {
-    studnetName,
+    studentName,
     studentRollNumber,
     studentDepartment,
     studentMobileNumber,
@@ -28,7 +28,7 @@ const form = async (req, res) => {
         .json({ success: false, message: "Photo is required" });
     }
     const newRequest = new formModel({
-      studnetName: studnetName,
+      studentName: studentName,
       studentRollNumber: studentRollNumber,
       studentDepartment: studentDepartment,
       studentMobileNumber: studentMobileNumber,

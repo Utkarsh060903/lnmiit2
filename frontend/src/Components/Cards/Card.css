@@ -1,18 +1,27 @@
 .card-container{
     width: 400px;
     height: 230px; 
-    margin-right: 30;
+    margin-right: auto; /*30px*/
     overflow: hidden;
-    box-shadow: 0 0 15px 5px;
+    /* box-shadow: 0 0 15px 5px; */
     transition:0.5s;
-    animation:ease-in; 
-    background-color: white;
+    animation:0.5 ease-in-out; 
+    background-color: transparent;
     border-radius: 5px;
-    /* margin-bottom: 2px; */
-
-    /* position: absolute; */
- 
+    background-size: cover;
+    backdrop-filter: blur(9px); /* Blur the background behind the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* opacity: 0.9; */
 }
+
+.card-container:hover{
+    backdrop-filter: blur(0px);
+    /* background-color: transparent; */
+    box-shadow: 0 0 10px 0;
+    transform: scale(1.03);
+} 
+
+
 
 
 
@@ -24,22 +33,15 @@
     position:absolute;
     display: flex;
     margin-top: 106px; 
-    justify-content: space-between;
+    justify-content:space-between;
     /* margin-bottom: -2px; */
 }
 
-/* .card2{
-    position:absolute;
-    margin-left:700px;
-} */
 
 
 
-.card-container :hover{
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 0px;
-    /* /* position:relative; */
-} 
+
+
 
 .image-container{
     overflow:hidden;
@@ -66,21 +68,28 @@ h3,p{
 
 .btn button{
     padding: 0.5rem;
-    background-color: white;
+    background-color: black;
     border: none;
     transition: 0.2s;
     margin-bottom: 0.5rem;
     border-radius: 3px;
 }
-
+/* 
 .btn button:hover{
     background: rgba(27, 156, 252, 0.1);
-}
+} */
 
-a{
+.btn > a{
     text-transform: uppercase;
-    color:#189cfc;
+    color:#000;
     text-decoration: none;
     font-weight:bold;
 
+}
+
+.card-body p{
+    color: white;
+}
+.card-title h3{
+    color: white;
 }

@@ -57,11 +57,11 @@
   .date-picker {
     position: absolute;
     top: -40px; /* Adjust as needed to position the date picker */
-    right: 0;
+    /* right: 0;
     background-color: white;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 5px; */
   /* }
   
   .card {
@@ -99,55 +99,124 @@
     */
 
 
-   .roomset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .date-picker {
-    margin-bottom: 20px;
-  }
-  
-  .main {
-    padding-left: 100px;
-    padding-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-  }
-  
-  .card {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ddd;
-    padding: 20px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .room-text {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .availability, .non-availability {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    margin-right: 10px;
-  }
-
-  .save-button {
-    background-color: tomato;
-    color: white;
-    border: none;
-    padding: 10px 60px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  
+    .roomset {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      padding-top: 150px;
+    }
+    
+    .main {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding-top: 20px;
+    }
+    
+    .date-picker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .date-picker label {
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    
+    .counts {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ddd;
+      padding: 20px;
+      font-size: 16px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .room-text {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .availability, .non-availability {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    
+    .availability label, .non-availability label {
+      margin-right: 10px;
+      font-size: 1em;
+    }
+    
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: tomato;
+      cursor: pointer;
+    }
+    
+    .save-button {
+      background-color: tomato;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: center;
+    }
+    
+    .save-button:hover {
+      background-color: darkred;
+    }
+    
+    @media (max-width: 768px) {
+      .main {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+    
+      .room-text {
+        font-size: 1.2em;
+      }
+    
+      .save-button {
+        padding: 8px 20px;
+        font-size: 1em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .counts, .date-picker label, .room-text {
+        font-size: 1em;
+      }
+    
+      .save-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+      }
+    }
+    
