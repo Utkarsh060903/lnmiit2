@@ -43,8 +43,5 @@ const forgotPassword = async (req, res) => {
   }
 };
 
-// const resetPassword = () => {
-
-// };
 
 export { forgotPassword};

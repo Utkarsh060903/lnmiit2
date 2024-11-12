@@ -9,7 +9,7 @@ const RoomSet = () => {
   useEffect(() => {
     if (selectedDate) {
       // Fetch availability data for the selected date
-      axios.get(`http://localhost:4001/api/availability-range?startDate=${selectedDate}&endDate=${selectedDate}`)
+      axios.get(`https://lnmiit-guest-house-server.onrender.com/api/availability-range?startDate=${selectedDate}&endDate=${selectedDate}`)
         .then(response => {
           const storedAvailability = response.data.message.roomAvailabilities[0]?.availability || {};
           setAvailability(storedAvailability);
@@ -45,7 +45,7 @@ const RoomSet = () => {
     };
 
     // Store availability data
-    axios.post("http://localhost:4001/api/store-availability", data)
+    axios.post("https://lnmiit-guest-house-server.onrender.com/api/store-availability", data)
       .then(response => {
         console.log("Availability data saved successfully:", response.data);
       })

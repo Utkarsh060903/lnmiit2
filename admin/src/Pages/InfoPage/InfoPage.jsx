@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./InfoPage.css";
 import axios from "axios";
 import moment from "moment";
+import { useContext } from "react";
+import { myContext } from "../../context/Context";
 
 const InfoPage = () => {
-  const [info, setInfo] = useState([]);
-  const url = "http://localhost:4001";
+  const {info, setInfo} = useContext(myContext)
+  const url = "https://lnmiit-guest-house-server.onrender.com";
 
   const handleForward = async (student) => {
     try {

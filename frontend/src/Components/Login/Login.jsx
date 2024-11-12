@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   const onLogin = async (formData) => {
-    const url = "http://localhost:4001/api/user/login";
+    const url = "https://lnmiit-guest-house-server.onrender.com/api/user/login";
 
     try {
       const response = await axios.post(url, formData);
