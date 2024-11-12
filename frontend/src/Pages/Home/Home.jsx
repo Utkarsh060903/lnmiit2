@@ -12,7 +12,8 @@ import Availability from "../Availability/Availability.jsx";
 // import ContactUS from 
 import Contactus from "../ContactUs/contactus.jsx";
 import download33 from '../../images/download33.png';
-
+import lnmiit from "../../images/lnmiit.jpg"
+import lnmiit1 from "../../images/lnmiit1.jpg"
 
 
 // const Home = () => {
@@ -119,7 +120,7 @@ const Home = () => {
           }}
         >
           <img
-            src={download33}
+            src={lnmiit1}
             className="lnm"
             alt="LNMIIT Jaipur"
             style={{
