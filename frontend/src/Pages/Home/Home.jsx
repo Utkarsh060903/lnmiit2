@@ -141,7 +141,7 @@ const Home = () => {
               boxSizing: "border-box",
             }}
           >
-            <h1 className="heading1" style={{color: "white"}}>
+            <h1 className="heading1">
               Welcome to LNMIIT Jaipur Guest House Booking Website
             </h1>
             <h2 className="h2-heading">We are not away from home</h2>
