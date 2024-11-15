@@ -14,7 +14,7 @@ const isRoomAvailable = async (roomNo, checkinDate, checkoutDate) => {
 };
 
 bookingRouter.post('/room-info', async (req, res) => {
-    const { roomNo, studentName, checkinDate, checkoutDate } = req.body;
+    const { roomNo, studentName, studentRollNumber, checkinDate, checkoutDate } = req.body;
 
     try {
         const available = await isRoomAvailable(room, new Date(checkinDate), new Date(checkoutDate));
@@ -24,8 +24,9 @@ bookingRouter.post('/room-info', async (req, res) => {
         }
 
         const booking = new bookingModel({
-            roomNo,
-            studentName,
+            roomNo: roomNo,
+            studentName: studentName,
+            studentRollNumber: studentRollNumber,
             checkinDate: checkinDate,
             checkoutDate: checkoutDate,
         });
