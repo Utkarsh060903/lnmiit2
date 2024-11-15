@@ -44,7 +44,7 @@ room.patch("/applications/:id", async (req, res) => {
       }
 
       application.roomNumber = roomNumber;
-      application.status = "Granted";
+      application.status = "granted";
       await application.save();
 
       res.status(200).json({ success: true, message: "Room allotted successfully" });

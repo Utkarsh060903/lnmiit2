@@ -149,8 +149,9 @@ const RoomStatus = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedRoomId, setSelectedRoomId] = useState(null);
   const [allottedRoom, setAllottedRoom] = useState("");
+  const [roomNo, setRoomNo] = useState()
 
-  const url = "https://lnmiit-guest-house-server.onrender.com";
+  const url = "http://localhost:4001";
 
   const fetchRooms = async () => {
     try {
@@ -202,6 +203,7 @@ const RoomStatus = () => {
           alert(`${allottedRoom} allotted successfully.`);
           closeModal();
           fetchRooms();
+          setRoomNo(allottedRoom)
         } else {
           alert("Failed to allot room.");
         }
@@ -235,6 +237,7 @@ const RoomStatus = () => {
             </tr>
           </thead>
           <tbody>
+            {console.log(rooms)}
             {rooms.map((room) => (
               <tr key={room._id}>
                 <td>{room.studentName}</td>
@@ -259,8 +262,11 @@ const RoomStatus = () => {
                 </td>
               </tr>
             ))}
+            
           </tbody>
+            
         </table>
+        <p>{roomNo}</p>
       </div>
 
       {showModal && (

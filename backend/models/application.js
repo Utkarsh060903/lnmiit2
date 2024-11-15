@@ -13,7 +13,7 @@ const applicationSchema = new mongoose.Schema({
   },
 
   roomNumber: {
-    type: Number,
+    type: String,
     required: true
   },
 
