@@ -12,6 +12,11 @@ const applicationSchema = new mongoose.Schema({
     unique: true
   },
 
+  roomNumber: {
+    type: Number,
+    required: true
+  },
+
   status: {
     type: String,
     enum: ["pending", "granted", "rejected"],
