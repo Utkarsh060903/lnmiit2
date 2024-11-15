@@ -1,34 +1,41 @@
+/* Container for availability section */
 .availability-container {
   width: 100%;
   height: auto;
-  /* max-width: 800px; */
   margin: 0 auto;
-  /* margin-bottom: 10px; */
-  padding: 20px 20px 20px 20px;
-  background-color:#8C1515;
-  /* border-radius: 8px; */
+  padding: 20px;
+  background-color: #8C1515;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* Heading styling */
 .availability-heading {
   text-align: center;
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px;
-  margin-top: 27px;
+  margin: 27px 0 30px;
   color: #fff;
-  display: block;
 }
 
 /* Calendar styling */
 .ant-picker-calendar {
   width: 100%;
-  max-width: 1600px; /* Increased max-width for larger calendar */
-  padding: 25px; /* Increased padding for better spacing */
+  max-width: 1600px;
+  padding: 25px;
   border-radius: 6px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Date cell styling for calendar */
+.ant-picker-calendar-cell {
+  min-width: 40px; /* Maintain a fixed minimum width */
+  height: auto; /* Allow height to expand as needed */
+  text-align: center;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: height 0.3s ease; /* Smooth transition for height changes */
 }
 
 /* Event list styling */
@@ -41,14 +48,14 @@
 .events li {
   margin-bottom: 5px;
   color: #fff;
-  font-size: 18px; /* Increased font size for better readability */
+  font-size: 18px;
 }
 
 /* Badge styling */
 .ant-badge-status {
-  padding: 8px 12px; /* Increased padding for better visibility */
+  padding: 8px 12px;
   border-radius: 4px;
-  font-size: 18px; /* Increased font size for better visibility */
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -67,7 +74,8 @@
   color: #fff;
 }
 
-.spinner-container{
+/* Spinner container */
+.spinner-container {
   position: relative;
 }
 
@@ -79,11 +87,9 @@ body, p, ul, h2 {
   color: #fff;
 }
 
-/* Section styling */
+/* About us section styling */
 #aboutus {
   padding: 80px 0;
-  overflow: hidden;
-  display: block;
   width: 100%;
   background-color: #1F1F1F;
   color: #fff;
@@ -91,8 +97,7 @@ body, p, ul, h2 {
 
 .s-title {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin: 50px 0 30px;
 }
 
 .s-title h2 {
@@ -134,7 +139,7 @@ ul {
   color: #fff;
 }
 
-/* Media queries for responsiveness */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .availability-container {
     padding: 15px;
@@ -146,6 +151,13 @@ ul {
 
   .ant-picker-calendar {
     width: 100%;
+    padding: 20px;
+  }
+
+  /* Ensuring calendar cells retain width, adjust height on mobile */
+  .ant-picker-calendar-cell {
+    min-width: 40px;
+    padding: 6px 4px; /* Slight padding reduction for mobile fit */
   }
 
   #aboutus {
@@ -165,5 +177,4 @@ ul {
     margin: 20px auto;
     padding: 10px;
   }
-  
 }

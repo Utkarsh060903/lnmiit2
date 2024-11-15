@@ -26,8 +26,8 @@ bookingRouter.post('/room-info', async (req, res) => {
         const booking = new bookingModel({
             roomNo,
             studentName,
-            checkinDate: new Date(checkinDate),
-            checkoutDate: new Date(checkoutDate),
+            checkinDate: checkinDate,
+            checkoutDate: checkoutDate,
         });
 
         await bookingModel.save();
