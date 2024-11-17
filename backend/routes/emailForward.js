@@ -113,7 +113,7 @@ emailRouter.get('/deny', async (req, res) => {
 });
 
 // Route to get all applications with studentName, roll number, and status
-emailRouter.get('/applications', async (req, res) => {
+emailRouter.get('/applications-email', async (req, res) => {
   try {
     const applications = await Application.find({}, 'studentName studentRollNumber status');
     res.status(200).json(applications);

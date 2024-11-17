@@ -7,16 +7,17 @@ const RoomStatus = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedRoomId, setSelectedRoomId] = useState(null);
   const [allottedRoom, setAllottedRoom] = useState("");
-  const [roomNo, setRoomNo] = useState();
+  const [roomNo, setRoomNo] = useState([]);
 
-  const url = "https://lnmiit-guest-house-server.onrender.com";
+  //   const url = "https://lnmiit-guest-house-server.onrender.com";
+  const url = "http://localhost:4001";
 
   const fetchRooms = async () => {
     try {
       const response = await axios.get(`${url}/api/applications`);
       if (response.status === 200) {
-        setRooms(response.data);
-        console.log(response.data);
+        setRooms(response.data.data);
+        console.log('data' +  response.data.data);
       } else {
         console.error("Failed to fetch room data.");
       }
@@ -24,6 +25,10 @@ const RoomStatus = () => {
       console.error("Error fetching data:", error);
     }
   };
+
+  useEffect(() => {
+    fetchRooms();
+  }, []);
 
   const handleDelete = async (id) => {
     try {
@@ -63,10 +68,10 @@ const RoomStatus = () => {
 
         if (response.status === 200 && response.data.success) {
           alert(`${allottedRoom} allotted successfully.`);
+          //   setRooms(allottedRoom)
           closeModal();
           fetchRooms();
-          setRoomNo(allottedRoom);
-          rooms.push(allottedRoom)
+          setRoomNo([allottedRoom, ...roomNo]);
         } else {
           alert("Failed to allot room.");
         }
@@ -78,10 +83,6 @@ const RoomStatus = () => {
       alert("Please select a room.");
     }
   };
-
-  useEffect(() => {
-    fetchRooms();
-  }, []);
 
   return (
     <div className="room-status-container">
@@ -100,17 +101,12 @@ const RoomStatus = () => {
             </tr>
           </thead>
           <tbody>
-            {console.log(rooms)}
-            {rooms.map((room) => (
+            {rooms && rooms.length>0 && rooms.map((room) => (
               <tr key={room._id}>
                 <td>{room.studentName}</td>
                 <td>{room.studentRollNumber}</td>
                 <td>{room.status || "Pending"}</td>
-                <td>
-                  {room.roomNumbers && room.roomNumbers.length > 0
-                    ? room.roomNumbers.join(", ")
-                    : "Not Allotted"}
-                </td>
+                <td>{room.roomNumbers ? room.roomNumbers : "Not Allotted"}</td>
                 <td>
                   <button
                     className="delete-button"
@@ -131,7 +127,6 @@ const RoomStatus = () => {
             ))}
           </tbody>
         </table>
-        <p>{roomNo}</p>
       </div>
 
       {showModal && (

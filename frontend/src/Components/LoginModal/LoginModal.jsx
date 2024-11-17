@@ -292,7 +292,7 @@ const LoginModal = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('https://lnmiit-guest-house-server.onrender.com/api/user/login', { email, password, username });
+      const response = await axios.post('http://localhost:4001/api/user/login', { email, password, username });
       
       if (response.data.success) {
         console.log("Login successful", response.data);
