@@ -7,8 +7,8 @@ import { myContext } from "../../context/Context";
 
 const InfoPage = () => {
   const {info, setInfo} = useContext(myContext)
-  // const url = "https://lnmiit-guest-house-server.onrender.com";
-  const url = "http://localhost:4001"
+  const url = "https://lnmiit-guest-house-server.onrender.com";
+  // const url = "http://localhost:4001"
   const handleForward = async (student) => {
     try {
       const response = await axios.post(`${url}/api/send-email-approval`, {

@@ -14,7 +14,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:4001/api/admin-login", {
+    const response = await fetch("https://lnmiit-guest-house-server.onrender.com/api/admin-login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
