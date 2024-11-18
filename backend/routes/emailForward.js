@@ -40,11 +40,11 @@ emailRouter.post('/send-email-approval', async (req, res) => {
       <p>Roll Number: ${studentRollNumber}</p>
       <p>Please review the guest house application.</p>
       <p>
-        <a href="http://localhost:4001/api/approve?rollNumber=${studentRollNumber}" 
+        <a href="https://lnmiit-guest-house-server.onrender.com/api/approve?rollNumber=${studentRollNumber}" 
            style="padding: 8px 16px; color: white; background-color: green; text-decoration: none; border-radius: 4px;">
            Approve
         </a>
-        <a href="http://localhost:4001/api/deny?rollNumber=${studentRollNumber}" 
+        <a href="https://lnmiit-guest-house-server.onrender.com/api/deny?rollNumber=${studentRollNumber}" 
            style="padding: 8px 16px; color: white; background-color: red; text-decoration: none; border-radius: 4px; margin-left: 10px;">
            Deny
         </a>
