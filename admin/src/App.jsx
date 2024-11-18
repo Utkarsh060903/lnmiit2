@@ -5,6 +5,7 @@ import InfoPage from './Pages/InfoPage/InfoPage'
 import RoomSet from './Pages/RoomSet/RoomSet'
 import FacultyInfoPage from './Pages/FacultyInfoPage/FacultyInfoPage'
 import RoomStatus from './Pages/roomStatus/RoomStatus'
+import LoginForm from './Pages/login/AdminLogin'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <div className="app-content">
         <Sidebar />
         <Routes>
+          <Route path='/admin-login' element={<LoginForm />} />
           <Route path='/studentinfo' element={<InfoPage />} />
           <Route path='/facultyinfo' element={<FacultyInfoPage />} />
           <Route path='/roomset' element={<RoomSet />} />

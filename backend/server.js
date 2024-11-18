@@ -13,6 +13,7 @@ import emailRouter from './routes/emailForward.js';
 import getFacultyInfoRouter from './routes/getFacultyInfoRouter.js';
 import bookingRouter from './routes/bookingRoute.js';
 import room from './routes/roomAllotment.js';
+import adminAuth from './routes/adminAuthRoute.js';
 const app = express()
 
 dotenv.config();
@@ -34,6 +35,7 @@ app.use("/api" , emailRouter)
 app.use("/api", getFacultyInfoRouter)
 app.use('/api', bookingRouter)
 app.use('/api', room)
+app.use('/api', adminAuth)
 
 connectDB();
 
