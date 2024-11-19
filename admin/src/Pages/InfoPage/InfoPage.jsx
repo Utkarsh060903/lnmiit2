@@ -3,6 +3,8 @@ import "./InfoPage.css";
 import axios from "axios";
 import moment from "moment";
 import { useContext } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { myContext } from "../../context/Context";
 
 const InfoPage = () => {
@@ -17,13 +19,13 @@ const InfoPage = () => {
       });
 
       if (response.data.success) {
-        alert("Email forwarded to the dean");
+        toast.success("Email forwarded to the dean!");
       } else {
-        alert("Failed to send email: " + response.data.message);
+        toast.error(`Failed to send email: ${response.data.message}`);
       }
     } catch (err) {
       console.error("Error sending email:", err);
-      alert("Failed to send email. Please try again later.");
+      toast.error("Failed to send email. Please try again later.");
     }
   };
 
@@ -46,6 +48,7 @@ const InfoPage = () => {
 
   return (
     <div className="guest-house-container">
+      <ToastContainer position="top-center" autoClose={3000} />
       <div className="list add">
         <h1 className="page-title">Students Applied For Guest House</h1>
         <div className="list-table">

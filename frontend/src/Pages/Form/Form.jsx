@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Form.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   useFullNameValidation,
   useMobileNumberValidation,
@@ -95,7 +97,14 @@ const GuestHouseBookingForm = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log('Form submitted successfully:', response.data);
-      setNotification("Form submitted successfully!");
+      toast.success("Form submitted successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
 
       setTimeout(() => {
         setNotification("");
@@ -122,10 +131,14 @@ const GuestHouseBookingForm = () => {
       });
     } catch (error) {
       console.error('Form submission error:', error);
-      setNotification("Form submission failed. Please try again.");
-      setTimeout(() => {
-        setNotification("");
-      }, 3000);
+      toast.error("Form submission failed. Please try again.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -417,7 +430,8 @@ const GuestHouseBookingForm = () => {
           {notification && <div className="notification">{notification}</div>}
         </form>
       </div>
-      
+      <ToastContainer />
+
     </div>
   );
 };
