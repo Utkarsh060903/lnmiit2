@@ -14,6 +14,7 @@ import getFacultyInfoRouter from './routes/getFacultyInfoRouter.js';
 import bookingRouter from './routes/bookingRoute.js';
 import room from './routes/roomAllotment.js';
 import adminAuth from './routes/adminAuthRoute.js';
+import confirmRouter from './routes/confirmEmailRouter.js';
 const app = express()
 
 dotenv.config();
@@ -36,6 +37,7 @@ app.use("/api", getFacultyInfoRouter)
 app.use('/api', bookingRouter)
 app.use('/api', room)
 app.use('/api', adminAuth)
+app.use('/api', confirmRouter)
 
 connectDB();
 
