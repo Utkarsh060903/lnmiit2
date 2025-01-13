@@ -25,13 +25,13 @@ const FacultyLogin = () => {
   };
 
   const onLogin = async (formData) => {
-    const url = "http://localhost:4001/api/user/login";
+    const url = "https://lnmiit-guest-house-server.onrender.com/api/user/login";
 
     try {
       const response = await axios.post(url, formData);
       if (response.data.success) {
         const { name } = response.data;
-        // setTokenWithExpiry(token, name, 3); // Set token for 3 days
+        // setTokenWithExpiry(token, name, 3);
         setUser({ name }); 
         navigate('/facultyform');
       } else {

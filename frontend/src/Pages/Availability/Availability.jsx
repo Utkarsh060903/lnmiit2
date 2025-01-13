@@ -14,7 +14,7 @@ const Availability = () => {
     const endDate = monthMoment.endOf('month').format('YYYY-MM-DD');
 
     try {
-      const response = await axios.get('http://localhost:4001/api/availability-range', {
+      const response = await axios.get('https://lnmiit-guest-house-server.onrender.com/api/availability-range', {
         params: {
           startDate,
           endDate,
@@ -28,7 +28,7 @@ const Availability = () => {
         data[date] = availability;
       });
 
-      console.log("Fetched data:", data); // Debug log to ensure data is correct
+      console.log("Fetched data:", data); 
       setAvailabilityData(data);
     } catch (error) {
       console.error('Error fetching availability data:', error);
@@ -44,7 +44,7 @@ const Availability = () => {
   }, []);
 
   const onPanelChange = (value, mode) => {
-    console.log("Panel changed to:", value.format("YYYY-MM-DD"), mode); // Debug log for panel change
+    console.log("Panel changed to:", value.format("YYYY-MM-DD"), mode); /
     fetchAvailabilityData(value);
   };
 
