@@ -44,7 +44,7 @@ const Availability = () => {
   }, []);
 
   const onPanelChange = (value, mode) => {
-    console.log("Panel changed to:", value.format("YYYY-MM-DD"), mode); /
+    console.log("Panel changed to:", value.format("YYYY-MM-DD"), mode);
     fetchAvailabilityData(value);
   };
 
