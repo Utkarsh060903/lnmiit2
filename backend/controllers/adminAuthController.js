@@ -55,11 +55,11 @@ const adminRegister = async (req, res) => {
     });
     const user = await newUser.save();
     const token = createToken(user._id);
-    // sendEmail(
-    //   user.email,
-    //   "Welcome to Our Service",
-    //   `Hi ${user.name},\n\nThank you for adminRegistering with us.\n\nBest regards,\nYour Company`
-    // );
+    sendEmail(
+      user.email,
+      "Welcome to Our Service",
+      `Hi ${user.name},\n\nThank you for adminRegistering with us.\n\nBest regards,\nYour Company`
+    );
 
     res.json({ success: true, token });
   } catch (error) {

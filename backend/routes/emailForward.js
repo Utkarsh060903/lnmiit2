@@ -7,21 +7,17 @@ dotenv.config();
 
 const emailRouter = express.Router();
 
-// POST route to send email approval
 emailRouter.post('/send-email-approval', async (req, res) => {
   const { studentName, studentRollNumber } = req.body;
   console.log("Received data:", req.body); // Log the received data for debugging
 
-  // Check if studentName and studentRollNumber are provided
   if (!studentName || !studentRollNumber) {
     return res.status(400).json({ success: false, message: 'studentName and studentRollNumber are required.' });
   }
 
-  // Initialize the application status as "pending"
   const application = new Application({ studentName, studentRollNumber, status: "pending" });
   await application.save();
 
-  // Create transporter for sending email
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -30,21 +26,20 @@ emailRouter.post('/send-email-approval', async (req, res) => {
     },
   });
 
-  // Set up email options
   const mailOptions = {
     from: process.env.EMAIL,
-    to: 'utkarsh060903@gmail.com', // Replace with actual recipient email
+    to: 'utkarsh060903@gmail.com',
     subject: 'New Guest House Application Forwarded',
     html: `
       <p>Student Name: ${studentName}</p>
       <p>Roll Number: ${studentRollNumber}</p>
       <p>Please review the guest house application.</p>
       <p>
-        <a href="https://lnmiit-guest-house-server.onrender.com/api/approve?rollNumber=${studentRollNumber}" 
+        <a href="http://localhost:4001/api/approve?rollNumber=${studentRollNumber}" 
            style="padding: 8px 16px; color: white; background-color: green; text-decoration: none; border-radius: 4px;">
            Approve
         </a>
-        <a href="https://lnmiit-guest-house-server.onrender.com/api/deny?rollNumber=${studentRollNumber}" 
+        <a href="http://localhost:4001/api/deny?rollNumber=${studentRollNumber}" 
            style="padding: 8px 16px; color: white; background-color: red; text-decoration: none; border-radius: 4px; margin-left: 10px;">
            Deny
         </a>
@@ -52,7 +47,6 @@ emailRouter.post('/send-email-approval', async (req, res) => {
     `,
   };
 
-  // Send the email
   try {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ success: true, message: 'Email sent successfully' });
@@ -62,7 +56,6 @@ emailRouter.post('/send-email-approval', async (req, res) => {
   }
 });
 
-// GET route to approve application
 emailRouter.get('/approve', async (req, res) => {
   const { rollNumber } = req.query;
 
@@ -87,7 +80,6 @@ emailRouter.get('/approve', async (req, res) => {
   }
 });
 
-// GET route to deny application
 emailRouter.get('/deny', async (req, res) => {
   const { rollNumber } = req.query;
 
@@ -112,7 +104,6 @@ emailRouter.get('/deny', async (req, res) => {
   }
 });
 
-// Route to get all applications with studentName, roll number, and status
 emailRouter.get('/applications-email', async (req, res) => {
   try {
     const applications = await Application.find({}, 'studentName studentRollNumber status');

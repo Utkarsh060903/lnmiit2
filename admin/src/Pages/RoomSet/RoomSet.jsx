@@ -45,7 +45,7 @@ const RoomSet = () => {
     };
 
     // Store availability data
-    axios.post("https://lnmiit-guest-house-server.onrender.com/api/store-availability", data)
+    axios.post("http://localhost:4001/api/store-availability", data)
       .then(response => {
         console.log("Availability data saved successfully:", response.data);
       })
@@ -86,7 +86,7 @@ const RoomSet = () => {
               onChange={handleDateChange}
             />
           </div>
-          <div className="save-button">
+          <div className="save-button-div">
             <button className="save-button" onClick={handleSave}>Save</button>
           </div>
         </div>

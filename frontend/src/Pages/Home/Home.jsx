@@ -120,7 +120,7 @@ const Home = () => {
           }}
         >
           <img
-            src={lnmiit1}
+            src={download33}
             className="lnm"
             alt="LNMIIT Jaipur"
             style={{

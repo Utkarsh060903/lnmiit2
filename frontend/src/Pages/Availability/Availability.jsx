@@ -14,7 +14,7 @@ const Availability = () => {
     const endDate = monthMoment.endOf('month').format('YYYY-MM-DD');
 
     try {
-      const response = await axios.get('https://lnmiit-guest-house-server.onrender.com/api/availability-range', {
+      const response = await axios.get('http://localhost:4001/api/availability-range', {
         params: {
           startDate,
           endDate,

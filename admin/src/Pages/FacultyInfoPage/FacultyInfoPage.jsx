@@ -5,7 +5,7 @@ import moment from "moment";
 
 const FacultyInfoPage = () => {
   const [info, setInfo] = useState([]);
-  const url = "https://lnmiit-guest-house-server.onrender.com";
+  const url = "http://localhost:4001";
 
   const handleForward = async (facultyEmployeeId) => {
     try {

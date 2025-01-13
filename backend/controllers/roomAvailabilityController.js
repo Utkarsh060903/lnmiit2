@@ -29,7 +29,7 @@ const getRoomAvailabilityInRange = async (req, res) => {
 
     res.json({ success: true, message: { roomAvailabilities } });
   } catch (error) {
-    console.error("Error fetching availability data:", error); // Added log for debugging
+    console.error("Error fetching availability data:", error);
     res.status(500).json({ error: "An error occurred while fetching availability data" });
   }
 };
