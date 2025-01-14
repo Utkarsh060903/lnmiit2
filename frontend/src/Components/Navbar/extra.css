@@ -33,7 +33,7 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 0;
-    margin-left: 100px;
+    margin-left: -70px;
     padding: 5px;
 }
 
@@ -53,4 +53,3 @@
         display: none;
     }
 }
-
