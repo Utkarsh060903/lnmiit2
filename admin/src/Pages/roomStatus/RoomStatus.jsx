@@ -11,7 +11,7 @@ const RoomStatus = () => {
   const [allottedRoom, setAllottedRoom] = useState("");
   const [roomNo, setRoomNo] = useState([]);
 
-  const url = "https://lnmiit-guest-house-server.onrender.com";
+  const url = "https://lnmiit-guest-server.onrender.com";
 
   const fetchRooms = async () => {
     try {

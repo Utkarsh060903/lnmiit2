@@ -44,7 +44,7 @@ const RegisterModal = () => {
     }
 
     try {
-      const response = await axios.post("https://lnmiit-guest-house-server.onrender.com/api/user/register", {
+      const response = await axios.post("https://lnmiit-guest-server.onrender.com/api/user/register", {
         username,
         email,
         password,

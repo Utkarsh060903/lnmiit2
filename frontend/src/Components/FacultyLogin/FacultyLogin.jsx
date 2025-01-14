@@ -25,7 +25,7 @@ const FacultyLogin = () => {
   };
 
   const onLogin = async (formData) => {
-    const url = "https://lnmiit-guest-house-server.onrender.com/api/user/login";
+    const url = "https://lnmiit-guest-server.onrender.com/api/user/login";
 
     try {
       const response = await axios.post(url, formData);

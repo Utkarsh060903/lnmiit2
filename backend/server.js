@@ -44,4 +44,3 @@ connectDB();
 app.listen(port , () => {
     console.log(`backend activated at ${port}`);
 }) 
-
